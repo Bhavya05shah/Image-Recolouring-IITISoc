@@ -1,5 +1,5 @@
 # Image-Recolouring-IITISoc
-We have explored some ways of going through with this project
+In the realm of digital imaging, the ability to breathe life into black and white photographs has long captivated researchers and artists alike. Our project delves into the fascinating world of image recoloring, exploring cutting-edge techniques to transform grayscale images into vibrant, full-color representations.
 <br>
 First Being:-
 <br>
