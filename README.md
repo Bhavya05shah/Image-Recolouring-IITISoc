@@ -2,12 +2,20 @@
 In the realm of digital imaging, the ability to breathe life into black and white photographs has long captivated researchers and artists alike. Our project delves into the fascinating world of image recoloring, exploring cutting-edge techniques to transform grayscale images into vibrant, full-color representations.
 <br>
 <br>
-First Being LAB Color Space:-
+We experimented with models such as CycleGAN, which excels in unpaired image translation, and StyleGAN, known for its high-quality image generation. However, after rigorous testing and comparison, we ultimately settled on Pix2Pix as our GAN of choice for this project. Pix2Pix's ability to learn a mapping from input images to output images, coupled with its effectiveness in handling paired datasets, made it particularly well-suited for our grayscale to RGB colorization
 <br>
-The LAB colour space is a three-dimensional model that encapsulates Lightness (L) and two colour-opponent dimensions: Green-Red (A) and Blue-Yellow (B). Unlike RGB, which is device-dependent and lacks perceptual uniformity, LAB is designed to approximate human vision more closely and is a 3D space.
 <br>
-(The numbers here represent the points on the 3d plane and how there colour changes with the axis length from the origin)
+The LAB color space played a crucial role in our recoloring process. Unlike RGB, LAB separates the luminance (lightness) channel 'L' from the color channels 'a' (green-red) and 'b' (blue-yellow). This separation allowed us to preserve the original image's luminance while focusing our colorization efforts on the 'a' and 'b' channels
 <br>
-Researched 2 Ways of Approaching this problem
+While we initially explored various Generative Adversarial Network (GAN) architectures, including CycleGAN and Pix2Pix, our research led us to DeOldify, a more advanced and specialized model for image colorization. DeOldify has proven to be superior to traditional GANs in several ways:
 <br>
-
+Stability: DeOldify employs NoGAN training, which combines the strengths of GANs with more stable training techniques, resulting in more consistent and higher-quality outputs.
+<br>
+Self-Attention: The incorporation of self-attention mechanisms allows DeOldify to better understand global context within an image, leading to more coherent and realistic colorization.
+<br>
+Perceptual Loss: DeOldify uses perceptual loss functions that align better with human visual perception, producing more natural-looking results.
+<br>
+Transfer Learning: By leveraging pre-trained networks, DeOldify can generalize well to a wide range of images, even with limited training data.
+<br>
+We have demonstrated how DeOldify's output surpasses that of traditional GANs in terms of color accuracy, consistency, and overall visual quality, marking a significant leap forward in the field of automatic image colorization.
+<br>
