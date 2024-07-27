@@ -22,6 +22,8 @@ Transfer Learning: By leveraging pre-trained networks, DeOldify can generalize w
 <br>
 We have demonstrated how DeOldify's output surpasses that of traditional GANs in terms of color accuracy, consistency, and overall visual quality, marking a significant leap forward in the field of automatic image colorization.
 <br>
+We have also used COCO for LABmethod2 so as to input some images in large number and its API to download the images from itself 
+<br>
 <br>
 CBIR---> Content Based Image Recolouring
 <br>
