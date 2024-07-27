@@ -22,9 +22,10 @@ Transfer Learning: By leveraging pre-trained networks, DeOldify can generalize w
 <br>
 We have demonstrated how DeOldify's output surpasses that of traditional GANs in terms of color accuracy, consistency, and overall visual quality, marking a significant leap forward in the field of automatic image colorization.
 <br>
+<br>
 CBIR---> Content Based Image Recolouring
 <br>
 This is realted to colouring the image with the context of the image using different types of Color Space 
 <br>
-Did this with the help of this Research Paper:--> https://www.researchgate.net/publication/362688889_Comparative_Overview_of_Color_Models_for_Content-Based_Image_Retrieval
+Did this with the help of this Research Paper:- https://www.researchgate.net/publication/362688889_Comparative_Overview_of_Color_Models_for_Content-Based_Image_Retrieval
 
