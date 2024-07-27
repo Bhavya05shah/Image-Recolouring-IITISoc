@@ -7,7 +7,9 @@ We experimented with models such as CycleGAN, which excels in unpaired image tra
 <br>
 The LAB color space played a crucial role in our recoloring process. Unlike RGB, LAB separates the luminance (lightness) channel 'L' from the color channels 'a' (green-red) and 'b' (blue-yellow). This separation allowed us to preserve the original image's luminance while focusing our colorization efforts on the 'a' and 'b' channels
 <br>
+<br>
 While we initially explored various Generative Adversarial Network (GAN) architectures, including CycleGAN and Pix2Pix, our research led us to DeOldify, a more advanced and specialized model for image colorization. DeOldify has proven to be superior to traditional GANs in several ways:
+<br>
 <br>
 Stability: DeOldify employs NoGAN training, which combines the strengths of GANs with more stable training techniques, resulting in more consistent and higher-quality outputs.
 <br>
