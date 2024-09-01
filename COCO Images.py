@@ -11,12 +11,11 @@ coco = COCO(annFile)
 
 # Get all image ids
 imgIds = coco.getImgIds()
-imgIds = imgIds[:3000]  # Select first 3000 images
+imgIds = imgIds[:3000]  
 
 # Set destination directory
 destDir = 'coco_dataset/images'
 
-# Function to download images
 def download_image(url, file_path):
     try:
         img_data = requests.get(url).content
