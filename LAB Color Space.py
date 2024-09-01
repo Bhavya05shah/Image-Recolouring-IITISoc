@@ -1,7 +1,7 @@
 import cv2 as cv
 import numpy as np
 
-#copied the models from the github repo of richzhang
+#Models from the github repo of richzhang
 protoxt_path = 'Models/colorization_deploy_v2.prototxt'#specifies the neural network
 model_path = 'Models/colorization_release_v2.caffemodel'#contains the trained weights and parameters
 kernel_path = 'models/pts_in_hull.npy'#helps in storing predefined colors and also mapping RGB to LAB
