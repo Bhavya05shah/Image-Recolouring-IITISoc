@@ -35,9 +35,9 @@ L -= 50# for reducing the brightness and centered around 0
 # Set the input for the network and forward pass(?)
 network.setInput(cv.dnn.blobFromImage(L))#It reshapes the image to a 4D array of shape (N->no. of images, C->no. of channels, H, W) 
 #to make this a suitable input to the deep learning model and blob just stores the data
-ab = network.forward()[0, :, :, :].transpose((1, 2, 0))
+ab = network.forward()[0, :, :, :].transpose((1, 2, 0))#the output is a 3D array of shape(2,224,224) and gets coverted to (224,224,2)
 
-# Resizing the ab channels and mix with the L channel to create the LAB image
+#Resizing the ab channels and mix with the L channel to create the LAB image
 ab = cv.resize(ab, (bw_img.shape[1], bw_img.shape[0]))
 L = cv.split(lab)[0]
 
@@ -45,7 +45,6 @@ colorized = np.concatenate((L[:, :, np.newaxis], ab), axis=2)
 colorized = cv.cvtColor(colorized, cv.COLOR_LAB2BGR)
 colorized = (255 * colorized).astype("uint8")
 
-# Display the original black and white and the colorized images
 cv.imshow("BW Image", bw_img)
 cv.imshow("Colorized", colorized)
 cv.waitKey(0)
