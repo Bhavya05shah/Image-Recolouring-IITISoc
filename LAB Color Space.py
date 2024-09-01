@@ -12,8 +12,8 @@ network = cv.dnn.readNetFromCaffe(protoxt_path, model_path)
 points = np.load(kernel_path)
 
 #Process the points(?)
-#this 313 means that there are 313 color clusters and each color cluster is treated as a single point(1,1)
-points = points.transpose().reshape(2, 313, 1, 1)
+#this 313 means that there are 313 color clusters and reshaped from(2,313) to this where (1,1) is to make it an easier fit for the network
+points = points.transpose().reshape(2, 313, 1, 1)#transposes (313,2) to (2,313)
 #class8_ab is the layer from the network getting extracted and points/clusters are being assigned to the blobs(which stores the weights)
 network.getLayer(network.getLayerId("class8_ab")).blobs = [points.astype(np.float32)]#the float32 is the required format for this network
 
