@@ -41,9 +41,10 @@ ab = network.forward()[0, :, :, :].transpose((1, 2, 0))#the output is a 3D array
 ab = cv.resize(ab, (bw_img.shape[1], bw_img.shape[0]))
 L = cv.split(lab)[0]
 
+#adding new axis here for the ab channel as the L is a 2D array and the LAB is a 3D(H,W,3) 
 colorized = np.concatenate((L[:, :, np.newaxis], ab), axis=2)
 colorized = cv.cvtColor(colorized, cv.COLOR_LAB2BGR)
-colorized = (255 * colorized).astype("uint8")
+colorized = (255 * colorized).astype("uint8")#due to normalization the values were between 0 to 1 
 
 cv.imshow("BW Image", bw_img)
 cv.imshow("Colorized", colorized)
