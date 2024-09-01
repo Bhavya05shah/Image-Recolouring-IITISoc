@@ -16,8 +16,9 @@ points = np.load(kernel_path)
 points = points.transpose().reshape(2, 313, 1, 1)
 #class8_ab is the layer from the network getting extracted and points/clusters are being assigned to the blobs(which stores the weights)
 network.getLayer(network.getLayerId("class8_ab")).blobs = [points.astype(np.float32)]#the float32 is the required format for this network
+
 #here another network layer operating at the end which is responsible for refining the predictions of the ab channels
-#a numoy array where there is a single output for each of the 313 color clusters and a bias of 2.606 (which is an experimentally determined value)
+#a numpy array where there is a single output for each of the 313 color clusters and a bias of 2.606 (which is an experimentally determined value)
 #gets added to the each of 313 raw scores from this layer and then gets converted to probabilities
 network.getLayer(network.getLayerId('conv8_313_rh')).blobs = [np.full([1, 313], 2.606, np.float32)]
 
@@ -32,7 +33,8 @@ L = cv.split(resized)[0]#splitting the resized image into l,a,b and storing the 
 L -= 50# for reducing the brightness and centered around 0
 
 # Set the input for the network and forward pass(?)
-network.setInput(cv.dnn.blobFromImage(L))
+network.setInput(cv.dnn.blobFromImage(L))#It reshapes the image to a 4D array of shape (N->no. of images, C->no. of channels, H, W) 
+#to make this a suitable input to the deep learning model and blob just stores the data
 ab = network.forward()[0, :, :, :].transpose((1, 2, 0))
 
 # Resizing the ab channels and mix with the L channel to create the LAB image
